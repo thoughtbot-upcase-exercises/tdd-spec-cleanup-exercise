@@ -30,11 +30,17 @@ RSpec.describe Invitation do
         # end
 
         it "does not save the invitation" do
+          new_user = User.new(email: "rookie@example.com")
+          team = Team.new(name: nil)
+          invitation = Invitation.new(team: nil, user: new_user)
           expect(invitation).not_to be_valid
           expect(invitation).to be_new_record
         end
 
         it "does not mark the user as invited" do
+          new_user = User.new(email: nil)
+          team = Team.new(name: nil)
+          invitation = Invitation.new(team: nil, user: new_user)
           expect(new_user).not_to be_invited
         end
       end
