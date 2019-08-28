@@ -49,11 +49,14 @@ RSpec.describe Invitation do
 
   describe "#event_log_statement" do
     context "when the record is saved" do
-      before do
-        invitation.save
-      end
+      # before do
+      #   invitation.save
+      # end
 
       it "include the name of the team" do
+        new_user = User.new(email: "rookie@example.com")
+        team = Team.new(name: "A fine team")
+        invitation = Invitation.new(team: team, user: new_user)
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("A fine team")
       end
