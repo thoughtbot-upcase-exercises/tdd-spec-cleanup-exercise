@@ -1,15 +1,15 @@
 require "rails_helper"
 
 RSpec.describe Invitation do
-  let(:invitation) { build(:invitation, team: team, user: new_user) }
-  let(:new_user) { create(:user, email: "rookie@example.com") }
-  let(:team) { create(:team, name: "A fine team") }
-  let(:team_owner) { create(:user) }
+  # let(:invitation) { build(:invitation, team: team, user: new_user) }
+  # let(:new_user) { create(:user, email: "rookie@example.com") }
+  # let(:team) { create(:team, name: "A fine team") }
+  # let(:team_owner) { create(:user) }
 
-  before do
-    team.update!(owner: team_owner)
-    team_owner.update!(team: team)
-  end
+  # before do
+  #   team.update!(owner: team_owner)
+  #   team_owner.update!(team: team)
+  # end
 
   describe "callbacks" do
     describe "after_save" do
