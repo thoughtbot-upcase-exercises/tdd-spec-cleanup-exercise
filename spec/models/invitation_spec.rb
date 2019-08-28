@@ -24,10 +24,10 @@ RSpec.describe Invitation do
       end
 
       context "with invalid data" do
-        before do
-          invitation.team = nil
-          invitation.save
-        end
+        # before do
+        #   invitation.team = nil
+        #   invitation.save
+        # end
 
         it "does not save the invitation" do
           expect(invitation).not_to be_valid
