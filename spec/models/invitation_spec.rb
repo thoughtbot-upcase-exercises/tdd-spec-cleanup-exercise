@@ -15,6 +15,7 @@ RSpec.describe Invitation do
     describe "after_save" do
       context "with valid data" do
         it "invites the user" do
+          new_user = User.new(email: "rookie@example.com")
           invitation.save
           expect(new_user).to be_invited
         end
