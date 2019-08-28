@@ -81,6 +81,9 @@ RSpec.describe Invitation do
       end
 
       it "includes the email of the invitee" do
+        new_user = User.new(email: "rookie@example.com")
+        team = Team.new(name: "A fine team")
+        invitation = Invitation.new(team: team, user: new_user)
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("rookie@example.com")
       end
