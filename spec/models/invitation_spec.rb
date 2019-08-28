@@ -33,6 +33,7 @@ RSpec.describe Invitation do
           new_user = User.new(email: "rookie@example.com")
           team = Team.new(name: nil)
           invitation = Invitation.new(team: nil, user: new_user)
+          invitation.save
           expect(invitation).not_to be_valid
           expect(invitation).to be_new_record
         end
@@ -41,6 +42,7 @@ RSpec.describe Invitation do
           new_user = User.new(email: nil)
           team = Team.new(name: nil)
           invitation = Invitation.new(team: nil, user: new_user)
+          invitation.save
           expect(new_user).not_to be_invited
         end
       end
@@ -57,6 +59,7 @@ RSpec.describe Invitation do
         new_user = User.new(email: "rookie@example.com")
         team = Team.new(name: "A fine team")
         invitation = Invitation.new(team: team, user: new_user)
+        invitation.save
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("A fine team")
       end
@@ -65,6 +68,7 @@ RSpec.describe Invitation do
         new_user = User.new(email: "rookie@example.com")
         team = Team.new(name: "A fine team")
         invitation = Invitation.new(team: team, user: new_user)
+        invitation.save
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("rookie@example.com")
       end
@@ -76,6 +80,7 @@ RSpec.describe Invitation do
         new_user = User.new(email: "rookie@example.com")
         team = Team.new(name: "A fine team")
         invitation = Invitation.new(team: team, user: new_user)
+        invitation.save
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("A fine team")
       end
@@ -84,20 +89,29 @@ RSpec.describe Invitation do
         new_user = User.new(email: "rookie@example.com")
         team = Team.new(name: "A fine team")
         invitation = Invitation.new(team: team, user: new_user)
+        invitation.save
         log_statement = invitation.event_log_statement
         expect(log_statement).to include("rookie@example.com")
       end
 
       it "includes the word 'PENDING'" do
+        new_user = User.new(email: "rookie@example.com")
+        team = Team.new(name: "A fine team")
+        invitation = Invitation.new(team: team, user: new_user)
+        
         log_statement = invitation.event_log_statement
+        invitation.save
         expect(log_statement).to include("PENDING")
       end
     end
 
     context "when the record is not saved and not valid" do
       it "includes INVALID" do
+        team = Team.new(name: "A fine team")
+        invitation = Invitation.new(team: team, user: nil)
         invitation.user = nil
-        log_statement = invitation.event_log_statement
+        invitation.save
+        log_statement = invitation.event_log_statement 
         expect(log_statement).to include("INVALID")
       end
     end
