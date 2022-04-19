@@ -61,7 +61,7 @@ and may be redistributed under the terms specified in the
 
 ## Credits
 
-![thoughtbot](https://presskit.thoughtbot.com/assets/images/logo.svg)
+![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
 
 This exercise is maintained and funded by
 [thoughtbot, inc](http://thoughtbot.com/community).
