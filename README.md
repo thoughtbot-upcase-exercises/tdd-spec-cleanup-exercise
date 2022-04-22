@@ -55,7 +55,7 @@ or explore any of the other great content on
 
 ## License
 
-tdd-spec-cleanup-exercise is Copyright © 2015-2018 thoughtbot, inc. It is free software,
+tdd-spec-cleanup-exercise is Copyright © 2015-2022 thoughtbot, inc. It is free software,
 and may be redistributed under the terms specified in the
 [LICENSE](/LICENSE.md) file.
 
