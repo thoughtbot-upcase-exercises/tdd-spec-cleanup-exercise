@@ -34,11 +34,11 @@ group :development, :test do
   gem "bullet"
   gem "bundler-audit", ">= 0.5.0", require: false
   gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
   gem "refills"
-  gem "rspec-rails", "~> 3.5.0.beta4"
+  gem "rspec-rails"
 end
 
 group :development, :staging do

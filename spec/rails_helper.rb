@@ -4,6 +4,9 @@ require File.expand_path("../../config/environment", __FILE__)
 abort("DATABASE_URL environment variable is set") if ENV["DATABASE_URL"]
 
 require "rspec/rails"
+require "support/factory_bot"
+
+FactoryBot.reload # Without this factories do not get registered
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 

@@ -98,11 +98,11 @@ GEM
       railties (>= 3.2)
     erubis (2.7.0)
     execjs (2.8.1)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     flutie (2.2.0)
     formulaic (0.4.1)
@@ -198,23 +198,23 @@ GEM
     refills (0.2.0)
     regexp_parser (2.3.0)
     rexml (3.2.5)
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-rails (3.5.2)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
+      rspec-support (~> 3.11.0)
+    rspec-rails (4.1.2)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.11.0)
     rubyzip (2.3.2)
     sass (3.4.25)
     sass-rails (5.0.7)
@@ -303,7 +303,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job_active_record
   dotenv-rails
-  factory_girl_rails
+  factory_bot_rails
   flutie
   formulaic
   high_voltage
@@ -324,7 +324,7 @@ DEPENDENCIES
   rails_stdout_logging
   recipient_interceptor
   refills
-  rspec-rails (~> 3.5.0.beta4)
+  rspec-rails
   sass-rails (~> 5.0)
   shoulda-matchers
   simple_form

@@ -1,19 +1,22 @@
-FactoryGirl.define do
+FactoryBot.define do
+
   factory :invitation do
     user nil
     team nil
   end
+
   factory :user do
-    email "MyString"
-    invited false
+    email { "MyString" }
+    invited { false }
     team nil
   end
+
   factory :team do
-    name "MyString"
+    name { "MyString" }
   end
 
   factory :magazine do
-    name "The Ruby Times"
+    name { "The Ruby Times" }
   end
 
   factory :person do
@@ -23,4 +26,5 @@ FactoryGirl.define do
     person
     magazine
   end
+
 end
